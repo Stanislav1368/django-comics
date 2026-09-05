@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ comic_title }} — {{ ui.site_name }}{% endblock %}
+
+{% block content %}
+<section class="reader-header">
+    <a class="back-link" href="{% url 'comics:home' %}">← {{ ui.back_library }}</a>
+    <div class="reader-title">
+        <p class="eyebrow">{{ comic.genre }} · {{ comic.year }}</p>
+        <h1>{{ comic_title }}</h1>
+        <p>{{ comic_description }}</p>
+        <span class="card-meta">{{ ui.by }}: {{ comic.author }}</span>
+    </div>
+</section>
+
+<section class="panels" aria-label="{{ ui.panel }}">
+    {% for panel in comic.panels %}
+    <article class="panel">
+        <div class="panel-image">
+            <img src="{% static panel.image %}" alt="">
+            <span class="panel-number">0{{ forloop.counter }}</span>
+        </div>
+        <div class="panel-copy">
+            <p class="eyebrow">{{ ui.panel }} 0{{ forloop.counter }}</p>
+            <h2>{{ panel.caption }}</h2>
+            <p>{{ panel.text }}</p>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+<div class="reader-footer">
+    <a class="button button-dark" href="{% url 'comics:home' %}">{{ ui.back_library }}</a>
+    <a class="text-link" href="{% url 'comics:preferences' %}">{{ ui.settings }} <span>↗</span></a>
+</div>
+{% endblock %}
