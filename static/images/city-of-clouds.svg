@@ -1,0 +1,13 @@
+<svg width="640" height="760" viewBox="0 0 640 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="760" rx="22" fill="#A7D9E8"/>
+  <circle cx="505" cy="149" r="80" fill="#F9E0A8"/>
+  <path d="M0 471C122 407 220 450 319 419C439 381 526 392 640 334V760H0V471Z" fill="#47809B"/>
+  <path d="M117 536L245 466L369 526L486 455L585 506L527 593L404 555L280 621L168 583L117 536Z" fill="#263B3A"/>
+  <path d="M224 451L259 382L294 451" fill="#F4836E"/>
+  <path d="M259 382L271 342L294 382" fill="#FBE7C4"/>
+  <circle cx="250" cy="444" r="11" fill="#FBE7C4"/>
+  <circle cx="287" cy="444" r="11" fill="#FBE7C4"/>
+  <path d="M75 210C129 173 179 182 208 223C154 245 105 241 75 210Z" fill="#FBE7C4"/>
+  <path d="M412 272C461 237 512 247 542 286C489 305 443 301 412 272Z" fill="#FBE7C4"/>
+  <text x="48" y="700" fill="#FBE7C4" font-family="Arial, sans-serif" font-size="30" font-weight="700">CITY OF CLOUDS</text>
+</svg>
