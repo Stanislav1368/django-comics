@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="{{ language }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ ui.site_name }}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="theme-{{ theme }} font-{{ font_size }}">
+    <div class="site-shell">
+        <header class="topbar">
+            <a class="brand" href="{% url 'comics:home' %}">
+                <span class="brand-mark">P</span>
+                <span>
+                    <strong>{{ ui.site_name }}</strong>
+                    <small>{{ ui.tagline }}</small>
+                </span>
+            </a>
+            <nav class="main-nav" aria-label="Основная навигация">
+                <a href="{% url 'comics:home' %}">{{ ui.library }}</a>
+                <a href="{% url 'comics:preferences' %}">{{ ui.settings }}</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <span>© 2026 {{ ui.site_name }}</span>
+            <span>{{ ui.about_text }}</span>
+        </footer>
+    </div>
+</body>
+</html>
