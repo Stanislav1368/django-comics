@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ ui.library }} — {{ ui.site_name }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">{{ ui.hero_kicker }}</p>
+        <h1>{{ ui.hero_title }}</h1>
+        <p class="hero-text">{{ ui.hero_text }}</p>
+        <a class="button button-dark" href="#collection">{{ ui.new_collection }}</a>
+    </div>
+    <div class="hero-art" aria-label="Иллюстрация космического комикса">
+        <img src="{% static 'images/hero.svg' %}" alt="">
+        <span class="art-note">issue 001</span>
+    </div>
+</section>
+
+{% if last_comic %}
+<section class="continue-banner">
+    <div>
+        <span class="eyebrow">{{ ui.last_read }}</span>
+        <h2>{% if language == "en" %}{{ last_comic.title_en }}{% else %}{{ last_comic.title }}{% endif %}</h2>
+    </div>
+    <a class="button button-light" href="{% url 'comics:reader' last_comic.slug %}">{{ ui.continue_reading }}</a>
+</section>
+{% endif %}
+
+<section id="collection" class="collection-section">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">{{ ui.new_collection }}</p>
+            <h2>{{ ui.collection_text }}</h2>
+        </div>
+        <span class="collection-count">0{{ comics|length }}</span>
+    </div>
+    <div class="comic-grid">
+        {% for comic in comics %}
+        <article class="comic-card accent-{{ comic.accent }}">
+            <a class="cover-wrap" href="{% url 'comics:reader' comic.slug %}">
+                <img src="{% static comic.cover %}" alt="{{ comic.title }}">
+                <span class="cover-label">{{ comic.genre }}</span>
+            </a>
+            <div class="comic-info">
+                <p class="card-meta">{{ comic.year }} · {{ comic.author }}</p>
+                <h3>{% if language == "en" %}{{ comic.title_en }}{% else %}{{ comic.title }}{% endif %}</h3>
+                <p>{% if language == "en" %}{{ comic.description_en }}{% else %}{{ comic.description }}{% endif %}</p>
+                <a class="text-link" href="{% url 'comics:reader' comic.slug %}">{{ ui.open_comic }} <span>↗</span></a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="about-strip">
+    <div class="about-icon">✦</div>
+    <div>
+        <p class="eyebrow">{{ ui.about }}</p>
+        <h2>{{ ui.about_title }}</h2>
+        <p>{{ ui.about_text }}</p>
+    </div>
+</section>
+{% endblock %}
