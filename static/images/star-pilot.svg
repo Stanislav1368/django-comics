@@ -1,0 +1,13 @@
+<svg width="640" height="760" viewBox="0 0 640 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="760" rx="22" fill="#282044"/>
+  <circle cx="499" cy="134" r="83" fill="#B9A5FF"/>
+  <circle cx="477" cy="111" r="11" fill="#F8E6C9"/>
+  <path d="M52 625C146 492 235 414 348 383C449 354 536 370 640 438V760H52V625Z" fill="#15121F"/>
+  <path d="M110 621C172 505 263 446 369 431C463 418 537 450 577 516" stroke="#FFCC68" stroke-width="8"/>
+  <path d="M279 388L318 242L365 388H279Z" fill="#F4836E"/>
+  <path d="M318 242L336 188L365 242" fill="#FFCC68"/>
+  <circle cx="310" cy="376" r="13" fill="#F8E6C9"/>
+  <circle cx="356" cy="376" r="13" fill="#F8E6C9"/>
+  <path d="M171 133L186 165L221 179L186 192L171 225L157 192L123 179L157 165L171 133Z" fill="#FFCC68"/>
+  <text x="48" y="700" fill="#F8E6C9" font-family="Arial, sans-serif" font-size="30" font-weight="700">STAR PILOT</text>
+</svg>
