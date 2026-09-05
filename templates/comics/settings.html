@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ ui.settings }} — {{ ui.site_name }}{% endblock %}
+
+{% block content %}
+<section class="settings-page">
+    <div class="settings-intro">
+        <a class="back-link" href="{% url 'comics:home' %}">← {{ ui.library }}</a>
+        <p class="eyebrow">{{ ui.appearance }}</p>
+        <h1>{{ ui.appearance }}</h1>
+        <p>{{ ui.appearance_text }}</p>
+    </div>
+
+    <form class="preferences-form" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>{{ ui.theme }}</legend>
+            <div class="choice-grid">
+                {% for radio in form.theme %}
+                <label class="choice-card">
+                    {{ radio.tag }}
+                    <span class="choice-preview choice-{{ radio.data.value }}"></span>
+                    <span>{{ radio.choice_label }}</span>
+                </label>
+                {% endfor %}
+            </div>
+            {% if form.theme.errors %}<p class="form-error">{{ form.theme.errors|striptags }}</p>{% endif %}
+        </fieldset>
+
+        <fieldset>
+            <legend>{{ ui.font_size }}</legend>
+            <div class="choice-grid text-choices">
+                {% for radio in form.font_size %}
+                <label class="choice-card">
+                    {{ radio.tag }}
+                    <span class="font-preview font-{{ radio.data.value }}">Aa</span>
+                    <span>{{ radio.choice_label }}</span>
+                </label>
+                {% endfor %}
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>{{ ui.language }}</legend>
+            <div class="language-options">
+                {% for radio in form.language %}
+                <label class="language-option">
+                    {{ radio.tag }}
+                    <span>{{ radio.choice_label }}</span>
+                </label>
+                {% endfor %}
+            </div>
+        </fieldset>
+
+        <button class="button button-dark" type="submit">{{ ui.save }}</button>
+    </form>
+</section>
+{% endblock %}
