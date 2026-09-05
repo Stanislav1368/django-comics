@@ -1,0 +1,14 @@
+<svg width="640" height="760" viewBox="0 0 640 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="760" rx="22" fill="#F2B978"/>
+  <circle cx="495" cy="155" r="91" fill="#E56959"/>
+  <path d="M0 580C107 489 215 472 327 523C439 573 536 562 640 487V760H0V580Z" fill="#263B3A"/>
+  <path d="M190 494C196 378 259 303 335 303C415 303 464 379 449 494" fill="#D8795D"/>
+  <path d="M220 346L334 174L445 346C388 321 278 321 220 346Z" fill="#263B3A"/>
+  <path d="M326 175L337 120L366 177" fill="#F2B978"/>
+  <circle cx="303" cy="400" r="12" fill="#F2E2BC"/>
+  <circle cx="365" cy="400" r="12" fill="#F2E2BC"/>
+  <path d="M294 450C317 469 345 469 372 447" stroke="#263B3A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M92 196C120 176 151 179 171 207C140 219 113 217 92 196Z" fill="#F2E2BC"/>
+  <path d="M489 417C522 397 557 408 570 440C538 446 511 439 489 417Z" fill="#F2E2BC"/>
+  <text x="48" y="700" fill="#F2E2BC" font-family="Arial, sans-serif" font-size="30" font-weight="700">TEA WITCH</text>
+</svg>
